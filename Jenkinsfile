@@ -13,11 +13,26 @@
  */
 
 pipeline {
-    agent any
+    agent { docker { image "gcr.io/jenkins-gke-plugin/jenkinsagent" } }
     stages {
-        stage('Hello') {
+        stage('start') {
             steps {
-                echo "hello1"
+                echo "start"
+            }
+        }
+        stage('Cloning source') {
+            steps {
+                git 'https://github.com/craigatgoogle/testthrowaway.git'
+            }
+        }
+        stage('Verify') {
+            steps {
+                sh "ls -la"
+            }
+        }
+        stage('finish') {
+            steps {
+                echo "finish"
             }
         }
     }
