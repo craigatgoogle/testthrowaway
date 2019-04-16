@@ -14,7 +14,6 @@
 
 pipeline {
     agent { docker { image "gcr.io/jenkins-gke-plugin/jenkinsagent" } }
-    agent any
     stages {
         stage('Cloning source') {
             steps {
