@@ -13,7 +13,6 @@
  */
 
 pipeline {
-    agent { docker { image "gcr.io/jenkins-gke-plugin/jenkinsagent" } }
     stages {
         stage('Cloning source') {
             steps {
@@ -23,6 +22,12 @@ pipeline {
         stage('Verify') {
             steps {
                 sh "ls -la"
+            }
+        }
+        stage('envvars') {
+            steps {
+                sh 'printev'
+                echo env.foo
             }
         }
         stage('finish') {
