@@ -15,7 +15,7 @@
 pipeline {
     agent any
     environment {
-        foo = 'baz'
+        foo = ''
     }
     stages {
         stage('Cloning source') {
