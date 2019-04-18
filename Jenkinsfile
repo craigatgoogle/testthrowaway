@@ -13,6 +13,7 @@
  */
 
 pipeline {
+    agent any
     stages {
         stage('Cloning source') {
             steps {
