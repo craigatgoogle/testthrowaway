@@ -14,6 +14,9 @@
 
 pipeline {
     agent any
+    environment {
+        foo = 'baz'
+    }
     stages {
         stage('Cloning source') {
             steps {
@@ -27,8 +30,7 @@ pipeline {
         }
         stage('envvars') {
             steps {
-                echo env.foo
-                sh 'env'
+                echo 'foo' env.foo
             }
         }
         stage('finish') {
