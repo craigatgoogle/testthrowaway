@@ -30,7 +30,8 @@ pipeline {
         }
         stage('envvars') {
             steps {
-                echo 'foo' env.foo
+                echo 'foo:'
+                echo env.foo
             }
         }
         stage('finish') {
