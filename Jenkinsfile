@@ -27,8 +27,8 @@ pipeline {
         }
         stage('envvars') {
             steps {
-                sh 'printev'
                 echo env.foo
+                sh 'env'
             }
         }
         stage('finish') {
