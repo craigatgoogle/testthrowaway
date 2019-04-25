@@ -24,6 +24,7 @@ pipeline {
             // }
             steps{
                 step([$class: 'KubernetesEngineBuilder', projectId: 'graphite-test-jenkins-ci', clusterName: 'test-cluster-foo', zone: 'us-central1-c', manifestPattern: 'manifest.yml', credentialsId: 'graphite-test-jenkins-ci'])
+            }
         }
     }
 }
